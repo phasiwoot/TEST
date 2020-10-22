@@ -1,0 +1,737 @@
+section.content {
+    padding-bottom: 0;
+}
+.box-row {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.header {
+    margin: auto;
+    table-layout: fixed;
+}
+
+.box-row > div {
+    display: inline-block;
+}
+
+table th {
+    text-align: center;
+}
+
+.loadingUI {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: rgba(255,255,255,.4);
+    cursor: wait;
+    z-index: 809;
+}
+.loadingUI > .inner {
+    top: 50%;
+    left: 50%;
+}
+.loadingUI > .inner > .fa {
+    position: absolute;
+    display: inline-block;
+    font-size: inherit;
+    margin-top: -15px;
+    font-size: 22pt;
+    pointer-events: none;
+}
+
+.select2-container .select2-selection--single {
+    height: 26px;
+}
+.select2-container--default .select2-selection--single, .select2-selection .select2-selection--single {
+    padding: 2px 12px;
+}
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ccc;
+    border-radius: 0;
+}
+.select2-container--open .select2-selection--single{
+    border-color: rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.9);
+}
+/**************** PlanUI Overall *****************/
+#planUI input[type=checkbox], input[type=radio] {
+    width: 15px;
+    height: 15px;
+}
+
+.planUI-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /*padding: 0 1px 1px 0;*/
+    box-sizing: content-box!important;
+}
+
+.planUI-wrapper input, .planUI-wrapper select {
+    height: 24px;
+    padding: 2px 12px;
+}
+
+
+.planUI-wrapper .form-inline {
+    display: inline-block;
+    width: auto;
+}
+
+/*.planUI-wrapper *:not(.fa) {
+    font-size: 10pt!important;
+    line-height: 12pt!important;
+}*/
+
+.planUI-area {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.planUI-content {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+/*    padding-top: 1px;
+    padding-left: 1px;*/
+}
+
+.planUI-box {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-color: #367fa9;/*#a3a3a3*/
+    border-style: solid;
+    border-width: 1px;
+    /*border-radius: 2px;*/
+    background-color: #ffffff;
+}
+
+.planUI-item-list {
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.planUI-box-bar {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    width: auto;
+    max-width: 99%;
+    background-color: transparent;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 1px rgba(250,250,250,.7), 0 0 1px 1px rgba(0,0,0,.4);
+}
+
+.planUI-box-bar .planUI-box-status {
+    display: none;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.planUI-box-bar .planUI-box-status.visible {
+    display: block;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+#lbl_vehicle_load_status, #lbl_vehicle_suggest {
+    float: left;
+    padding: 4px 8px;
+    /*margin-right: 1px;*/
+}
+
+#lbl_vehicle_load_status {
+    background-color: #dee7d1;
+    border: 1px solid #aaa;
+    border-radius: 1px;
+}
+
+#lbl_vehicle_suggest {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    border-radius: 1px;
+}
+
+li.item-group {
+    display: block;
+    margin-top: 6px;
+}
+.planUI-item-list > li.item-group:last-of-type {
+    margin-bottom: 100px;
+}
+
+li.item-group > .group-label {
+    display: flex;
+    margin-right: 4px;
+    height: 36px;
+    align-items: center;
+    background-color: #ffffff;
+    border-style: solid;
+    border-color: #a3a3a3;
+    border-width: 0 0 1px 0;
+    border-radius: 1px;
+    padding: 0 24px;
+    min-height: 28px;
+    box-shadow: 0 2px 1px rgba(200,200,200,.3);
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*li.item-group:nth-child(odd) > .group-label {
+    background-color: #ffffff;
+}
+
+li.item-group:nth-child(even) > .group-label {
+    background-color: #f9f9f9;
+}*/
+
+li.item-group.group-level-1 > .group-label {
+    border: 1px solid #a3a3a3;
+}
+
+/*.group-label input[type=checkbox] {
+    width: 14px;
+    height: 14px;
+}*/
+
+.group-label > span {
+    min-width: 20px;
+    margin-right: 18px;
+    width: 70%;
+    padding: 8px 12px;
+}
+
+.group-label > .label-text {
+    /*font-weight: 600;*/
+}
+
+.group-label:hover {
+    cursor: pointer;
+    color: #367fa9;
+/*    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;*/
+    border-bottom: 2px solid #367fa9!important;
+}
+
+li.item-group.order_no > .group-label {
+/*    background-color: #ffffff;*/
+    /*color: #dd4b39;*/
+    font-weight: normal;
+}
+
+li.item-group.order_no.planned > .group-label {
+    color: #00a65a;
+    font-weight: 600;
+}
+
+ul.sub-group {
+    display: block;
+    position: relative;
+    margin-bottom: 0;
+    padding-inline-start: 0;
+}
+
+ul.sub-group > li.item-group {
+    display: none;
+}
+
+/*li.item-group.collapsed > .group-label {
+    border-top: 0!important;
+    border-left: 0!important;
+    border-right: 0!important;
+    border-bottom: 2px solid #367fa9!important;
+}*/
+
+li.item-group.collapsed > ul.sub-group > .item-group {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+.planUI-box empty {
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+}
+
+.planUI-box > table > thead > tr > th, .planUI-box > table > tbody > tr > td {
+    padding: 4px 1px 4px 0;
+}
+
+.planUI-box-header {
+    display: inline-block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 1;
+}
+
+.planUI-box-header > .box-title {
+    display: block;
+    min-width: 40px;
+    padding: 2px 12px;
+    background-color: rgba(79,129,189, 1);
+    border-bottom-right-radius: 2px;
+    text-align: center;
+    font-size: 9pt;
+    font-weight: bold;
+    z-index: 1;
+}
+
+#btn_reset_format {
+    height: 20px;
+    line-height: unset;
+    padding: 2px 6px;
+}
+
+.planUI-box table.table {
+    border: 1px solid #ccc;
+}
+
+.planUI-box table.table th {
+    height: 24px;
+    padding: 2px 3px 2px 3px;
+    font-size: 10pt;
+    line-height: 12pt;
+    background-color: #eee;
+}
+
+.planUI-box table.table th input {
+    font-weight: normal;
+}
+
+.planUI-box table.table th, .planUI-box table.table td {
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+/*#vehicle_list .planUI-box table.table {
+    border: none;
+}*/
+
+#vehicle_list .planUI-box table.table > thead > tr > th:first-of-type
+, #vehicle_list .planUI-box table.table > tbody > tr > td:first-of-type {
+    border-left: none;
+}
+
+#vehicle_list .planUI-box table.table > thead > tr > th:last-of-type
+, #vehicle_list .planUI-box table.table > tbody > tr > td:last-of-type {
+    border-right: none;
+}
+
+.item-group > .group-label, .item-group .order_detail
+, .item-group th, .item-group td
+{
+    font-size: 10pt;
+    line-height: 12pt;
+}
+
+.btn_group_details, .btn_fleet_details, .btn_add_route_point {
+    cursor: pointer;
+    color: #3c8dbc;
+    font-size: 11pt;
+    line-height: 12pt;
+}
+
+
+/**************** PlanUI Order Format *****************/
+#order_format_panel {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 4px 4px 4px 4px;
+    margin-top: 26px;
+}
+
+.format-box {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 2.6em;
+}
+
+.format-box.format-sort {
+    width: auto;
+    min-width: 70px;
+    max-width: 200px;
+    border: 1px solid #000000;
+    border-radius: 1px;
+    background-color: #ffffff;
+    padding: 2px 4px;
+}
+
+.format-box.format-sort.empty {
+    border-style: dashed;
+}
+
+.format-box.format-sort.empty:after {
+    content: '+';
+}
+
+.format-box.format-sort.disabled {
+    background-color: rgba(178,178,178,1);
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.format-box.format-sort:not(.disabled):hover {
+    cursor: pointer;
+    border-color: #3c8dbc;
+    border-width: 2px;
+}
+
+/**************** PlanUI Order List *****************/
+.order_detail {
+    min-height: 100px;
+}
+
+.order_detail table {
+    table-layout: fixed;
+}
+
+/**************** PlanUI Vehicle List *****************/
+#tb_vehicle_list {
+    table-layout: fixed;
+    margin-bottom: 100px;
+}
+/*#tb_vehicle_list td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}*/
+
+/**************** PlanUI Route Example *****************/
+#route_example_flowchart {
+    display: grid;
+    position: relative;
+    justify-content: center;
+    /*align-items: center;*/
+    width: 100%;
+    /*padding: 4px 4px 4px 4px;*/
+    padding: 20px 5%;
+    margin-top: 26px;
+    /*overflow: auto;*/
+    grid-template-columns: 25% 12.5% 25% 12.5% 25%;
+    grid-gap: 0px;
+}
+
+#route_example_flowchart > .flowchart-diagram {
+    display: inline-grid;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    min-height: 56px;
+}
+
+#route_example_flowchart > .flowchart-diagram > .step-route {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    background-color: #ffffff;
+    border: 1px solid #000;
+/*    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+}
+
+.step-route.new {
+    border-style: dashed!important;
+    border-color: #00a65a!important;
+    color: #00a65a!important;
+}
+
+.step-route>span {
+    display: block;
+    font-size: 8.6pt!important;
+}
+
+.step-route .title {
+    font-weight: 600;
+    font-size: 8pt!important;
+    margin-bottom: 5px;
+/*    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+    width: 100%;
+}
+
+#route_example_flowchart > .flowchart-diagram > .arrow-line {
+    display: flex;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.arrow {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.arrow .line {
+    position: absolute;
+    width: calc(100% - 10px);
+    height: 0;
+    border-top: 1px solid #000;
+    top: 50%;
+}
+.arrow .line > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -10px;
+    background: #fff;
+    border: 1px dashed #000;
+    width: 24px;
+    height: 24px;
+    padding: 4px 8px;
+}
+.arrow .line > span:after {
+    content: '+';
+}
+.arrow .point {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #000;
+    border-bottom: 5px solid transparent;
+    border-right: none;
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+}
+
+.arrow-right .line {
+    
+}
+.arrow-right .point {
+    
+}
+
+.arrow-left .line {
+    right: 0;
+}
+.arrow-left .line>span {
+    
+}
+.arrow-left .point {
+    border-top: 5px solid transparent;
+    border-left: none;
+    border-right: 10px solid #000;
+    border-bottom: 5px solid transparent;
+    border-left: none;
+    left: 0;
+}
+
+.arrow-bottom .line {
+    width: 0;
+    height: calc(100% - 10px);
+    border-left: 1px solid #000;
+    top: 0;
+    left: 50%;
+}
+.arrow-bottom .line>span {
+    margin-top: -12px;
+    margin-left: -12px;
+}
+.arrow-bottom .point {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: none;
+    top: initial;
+    left: 50%;
+    bottom: 0;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+
+
+
+/*********************************/
+/* Dropdown Option */
+.dropdown-option {
+    display: inline-block;
+    position: relative;
+    min-width: 80px;
+}
+
+/* Dropdown Button */
+.dropdown-button {
+    background-color: #3498DB;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: transparent;
+    width: auto;
+    min-width: 80px;
+    max-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+/* Dropdown List */
+.dropdown-content > a {
+    display: block;
+    padding: 6px 8px;
+    max-width: 100%;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+.dropdown-content > a:hover {
+    background-color: #ddd
+}
+
+.dropdown-option.active > .dropdown-button {
+    background-color: #2980B9;
+}
+
+.dropdown-option.active > .dropdown-content {
+    display: block;
+}
+
+/*.btn_delete_delivery_fleet {
+    cursor: pointer;
+}*/
+
+[class*="icheckbox_"].disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
+
+.icheckbox_flat-red.checked.disabled {
+    background-position: -88px 0;
+    opacity: .7;
+    cursor: not-allowed;
+}
+.icheckbox_flat-red.disabled {
+    background-position: -132px 0;
+}
+
+.icheckbox_flat-blue.disabled {
+    background-position: -44px 0;
+}
+.icheckbox_flat-blue.checked.disabled {
+    background-position: -22px 0;
+}
+
+#tb_edit_route input, #tb_edit_route select {
+    height: 24px;
+    padding: 2px 12px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#tb_edit_route > tbody > tr:nth-child(2) > td .btn_route_move_up {
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+#tb_edit_route > tbody > tr:last-of-type > td .btn_route_move_down {
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+.select2-selection--multiple  {
+    overflow-y: auto;
+    height: 60px;
+    overflow-y: scroll;
+}
+
+#order_filter .planUI-box table,#vehicle_filter .planUI-box table {
+	table-layout: fixed;
+	/*width: auto;
+	max-width: 99%;*/
+}
+
+#order_filter .planUI-box table th,#vehicle_filter .planUI-box table th {
+	height: 1px;
+}
+#order_filter .planUI-box table td,#vehicle_filter .planUI-box table td {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#order_filter .select2-selection--multiple {
+    height: 61px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #3c8dbc !important;
+    border-color: #367fa9;
+    color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    cursor: default;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 0 5px;
+}
+
+#checkAllBarOrder {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    /*opacity: 0.3;*/
+}
+
+/*#checkAllBarOrder:hover {
+    opacity: 1;
+}*/

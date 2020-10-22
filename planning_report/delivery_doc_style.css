@@ -1,0 +1,168 @@
+html * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font: 10pt "Tahoma";
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.box-row {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+.box-col {
+    display: inline-block;
+    position: relative;
+}
+
+.header {
+    width: 100%;
+    margin: auto;
+    table-layout: fixed;
+}
+
+.content {
+    width: 100%;
+    margin: auto;
+    table-layout: fixed;
+}
+
+.content>thead>tr>th {
+    visibility: hidden;
+    height: 1px;
+    border: 0px;
+    padding: 0;
+}
+
+.content>tbody>tr>td.group {
+    padding: 6px 8px;
+}
+
+.content>tbody>tr>td.th {
+    text-align: center;
+    font-weight: bold;
+}
+
+.content>tbody>tr>td {
+    vertical-align: top;
+    padding: 2px 4px;
+    border: 1px solid #000;
+}
+
+.content>thead>tr>th, .content>tbody>tr>td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.content>tbody>tr>td.empty {
+    border-left: 0;
+    border-right: 0;
+    height: 12px;
+    padding: 0;
+}
+
+.content>tbody>tr:first-of-type>td.empty {
+    border: none;
+    height: 0px;
+}
+
+.footer {
+    width: 100%;
+    margin: auto;
+    table-layout: fixed;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+#box-bottom {
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+}
+
+#box-bottom-content {
+    position: absolute;
+    width: 20cm;
+    left: -10cm;
+    bottom: 0;
+    padding-bottom: 40px;
+}
+
+.page-breaker {
+    page-break-after: always;
+}
+
+
+
+img.barcode {
+    margin-bottom: -6px;
+}
+/*img.barcode { 
+    width: 120px; //132px
+    height: 58px; //71px
+}*/
+
+.page {
+    position: relative;
+    width: 21cm;
+    min-height: 29.7cm;
+    max-height: 29.7cm;
+    margin: 20px auto;
+    padding: 0.5cm 16px;
+    background: white;
+    border: 1px solid #000;
+}
+
+.page hr {
+    border: 1px solid #000;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    #tb_config {
+        display: none;
+    }
+    
+    /*img.barcode {
+        width: 132px;
+        height: 71px;
+        margin-top: -5px;
+    }*/
+    
+    .page {
+        width: 21cm;
+        min-height: 29.4cm;
+        max-height: 29.7cm;
+        margin: 0;
+        padding: 0.5cm 16px;
+        background: white;
+        border: none;
+    }
+}

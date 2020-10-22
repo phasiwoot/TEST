@@ -1,0 +1,152 @@
+.icon-sys_source {
+    width: 60px;
+    height: 30px;
+    object-fit: scale-down;
+}
+section.invoice.hiddenInvoiceListSearch {
+    display: none;
+}
+address {
+    width: 80%;
+    word-break: break-word;
+}
+.box-header small {
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 4px;
+    font-weight: 300;
+}
+.bg-orange-new {
+	background-color : rgba(255, 133, 27, .56) !important;
+	color : black;
+}
+.bg-green-new {
+	background-color : rgba(0, 141, 76, .6) !important;
+	color : black;
+}
+small {
+    line-height: 1;
+    color: #777;
+}
+
+#file_upload_example {
+    cursor: pointer;
+    background-color: initial;
+}
+
+table#tb_file_upload {
+    width: 88%;
+    margin: auto;
+}
+
+table#tb_file_upload td:nth-child(1) {
+    padding: 4px 6px;
+}
+
+table#tb_file_upload td:nth-child(2), table#tb_file_upload td:nth-child(3) {
+    padding: 4px 6px;
+    text-align: right;
+}
+
+.text-ali-right {
+    text-align: right;
+}
+
+.form-inline {
+    display: inline;
+}
+
+.btn-inline {
+    position: relative;
+    margin-top: -4px;
+}
+
+/*.box-body {
+    padding: 10px 0;
+}*/
+
+.box-js-loading {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+#tb_list_order_wrapper .dataTables_scrollHead th {
+    display: none;
+}
+
+#tb_list_order>thead>tr>th {
+    text-align: center;
+    display: none;
+}
+
+#tb_list_order>tbody>tr>td:not(.dataTables_empty) {
+    padding: 0!important;
+}
+
+#tb_list_order>tbody>tr>td section.invoice {
+    margin: 0!important;
+    border: none;
+}
+
+table#tb_list_order.dataTable thead .sorting_asc:after {
+    content: '';
+}
+
+.invoice{
+    background-color: #E5E7E9;
+}
+
+.tag, .badge {
+    font-size: 11px;
+    font-weight: normal;/*bold*/
+    opacity: .9;
+}
+
+.tag {
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.tag, .sel-tag, .badge {
+    float: left;
+    padding: 0 8px;
+    /*margin-top: 10px;*/
+    /*margin-right: 10px;*/
+    line-height: 22px;
+    border: 1px solid rgba(0,0,0,0.3)!important;
+}
+
+table .tag {
+    width: auto;
+    float: none;
+    margin: 0 auto;
+    display: inline-block;
+    font-size: 10px;
+}
+
+
+.page-btn {
+    font-weight: normal;/*bold*/
+    opacity: .9;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    color: #444;
+    float: left;
+    padding: 0 8px;
+    margin-top: 10px;
+    margin-right: 10px;
+    line-height: 22px;
+    border: 1px solid rgba(0,0,0,0.3)!important;
+}
+
+.page-btn.active {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: #fff;
+}
